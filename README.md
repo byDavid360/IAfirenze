@@ -37,7 +37,7 @@ vectorizer = CountVectorizer(max_features=16165, min_df=5, max_df=0.7, stop_word
 
 ```
 
-#### Scenario 2 (bigrams)
+### Scenario 2 (bigrams)
 In this case, it is necessary to edit the parameter *ngram_range* and set it to **ngram_range=(2,2)**
 NOTE: we are using the top 16165 bigrams for the analysis as seen in the parameter *max_features* (this can be edited of course)
 ```
@@ -45,14 +45,14 @@ vectorizer = CountVectorizer(max_features=16165, min_df=5, max_df=0.7, stop_word
 
 ```
 
-#### Scenario 3 (unigrams + bigrams)
+### Scenario 3 (unigrams + bigrams)
 Here we need to change two parameters: *max_features* to **32330** (top 16165 unigrams + top 16165 bigrams) and *ngram_range* to **(1,2)** (unigrams + bigrams)
 ```
 vectorizer = CountVectorizer(max_features=32330, min_df=5, max_df=0.7, stop_words=stopwords.words('english'), ngram_range=(1,2))
 
 ```
 
-#### Scenario 4 (top 2633 unigrams)
+### Scenario 4 (top 2633 unigrams)
 This time we only need to change the parameter *max_features* to **2633**
 NOTE: remeber that the parameter *ngram_range* is **(1,1)** (unigrams) by default so there is no need to write it.
 ```
@@ -69,10 +69,10 @@ from nltk.stem import WordNetLemmatizer
 stemmer = WordNetLemmatizer()
 
 for sen in range(0, len(X)):
-    # Remove all the special characters. Numeros, caracteres especiales...
+    # Remove all the special characters.
     document = re.sub(r'\W', ' ', str(X[sen]))
     
-    # remove all single characters (ej. David's se quita la s)
+    # remove all single characters (ej. David's without 's)
     document = re.sub(r'\s+[a-zA-Z]\s+', ' ', document)
     
     # Remove single characters from the start
@@ -86,9 +86,7 @@ for sen in range(0, len(X)):
     
     # Converting to Lowercase
     document = document.lower()
-    
-    # Lemmatization. Aqui por ejemplo "cats" se convierte en "cat"
-    # Lemmatization se hace para evitar crear features que son semanticamente similares pero no sintacticamente
+   
     document = document.split()
 
     document = [stemmer.lemmatize(word) for word in document]
