@@ -1,5 +1,5 @@
 # Sentiment Classification using Decision Trees. 
-Here I storage the code and explanation on how to use the code I wrote of my assignment for the course INTELLIGENZA ARTIFICIALE of *Università degli Studi di Firenze*.
+Here I store the code and explanation on how to use the code I wrote of my assignment for the course INTELLIGENZA ARTIFICIALE of *Università degli Studi di Firenze*.
 
 ## What is inside this repository?
 There's only one code file called **sentiment.py** where it is written all the code needed in order to reproduce the experiment.
