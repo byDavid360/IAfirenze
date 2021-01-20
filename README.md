@@ -28,7 +28,7 @@ There are 4 scenarios:
 
 Those scenarios are achieved by changing some parameters frome the **CountVectorizer** function from **scikit-learn**
 
-#### Scenario 1 (unigrams)
+### Scenario 1 (unigrams)
 If we want to use unigrams, we don't have to tell it to the CountVectorizer because it analyzes unigrams by default. 
 In any case, the necessary parameter is **ngram_range=(1,1)**
 NOTE: we are using the top 16165 unigrams for the analysis as seen in the parameter *max_features* (this can be edited of course)
