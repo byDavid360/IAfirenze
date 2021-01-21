@@ -7,7 +7,7 @@ There's only one code file called **sentiment.py** where it is written all the c
 ## Which dataset do I need to use? Where can I find it?
 The dataset needed for this experiment (and the one that I used) can be found on the following [link](http://www.cs.cornell.edu/people/pabo/movie-review-data/mix20_rand700_tokens_cleaned.zip)
 
-Once you have downloaded the **zip** file you only have to extract it and there you will find two folders:
+Once you have downloaded the **zip** file you only have to extract it and there you will a folder called **tokens** inside which there'll be two folders:
 - pos: the folder that contains the 700 txt positive reviews.
 - neg: the folder that contains the 700 txt negative reviews.
 
