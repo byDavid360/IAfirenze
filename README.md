@@ -1,32 +1,32 @@
 # Sentiment Classification using Decision Trees. 
-Here I store the code and explanation on how to use the code I wrote of my assignment for the course INTELLIGENZA ARTIFICIALE of *Università degli Studi di Firenze*.
+Here I store the code and explanation on how to use it for my assignment of the course INTELLIGENZA ARTIFICIALE of *Università degli Studi di Firenze*.
 
 ## What is inside this repository?
-There's only one code file called **sentiment.py** where it is written all the code needed in order to reproduce the experiment.
+There's only one file called **sentiment.py** where it is written all the code needed in order to reproduce the experiment.
 
 ## Which dataset do I need to use? Where can I find it?
 The dataset needed for this experiment (and the one that I used) can be found on the following [link](http://www.cs.cornell.edu/people/pabo/movie-review-data/mix20_rand700_tokens_cleaned.zip)
 
-Once you have downloaded the **zip** file you only have to extract it and there you will a folder called **tokens** inside which there'll be two folders:
-- pos: the folder that contains the 700 txt positive reviews.
-- neg: the folder that contains the 700 txt negative reviews.
+Once you have downloaded the **zip** file you only have to extract it and there you will find a folder called **tokens** inside which there'll be two folders:
+- **pos**: the folder that contains the 700 txt positive reviews.
+- **neg**: the folder that contains the 700 txt negative reviews.
 
-## Which librarys do I need?
+## Which libraries do I need?
 You will need the following python libraries in order to reproduce the results:
 - **NLTK (Natural language toolkit)** : needed for operating with the text using its methods, functions and utilities (such as the stopwords).
-- **Scikit-Learn** : needed for implementing our machine learning classifier
-- **Regular expression library (re)**: needed for text lemmatization
-- **Pandas**: used for returning the confussion matrix aesthetically
+- **Scikit-Learn** : needed for implementing our machine learning classifier.
+- **Regular expression library (re)**: needed for text lemmatization.
+- **Pandas**: used for returning the confussion matrix aesthetically (it's not neccesary in order to perform the calculus).
 
 ## How to use the code
-Although the code has a detailed explanation, here I am going to remind which are the parts where the code needs to be edited in order to run the different scenarios
+Although the code file has a detailed explanation, here I am going to remind which are the parts where the code needs to be edited in order to run the different scenarios.
 There are 4 scenarios:
 1. Only using unigrams.
 2. Only using bigrams.
 3. Using unigrams and bigrams.
 4. Using the top 2633 unigrams.
 
-Those scenarios are achieved by changing some parameters frome the **CountVectorizer** function from **scikit-learn**
+Those scenarios are achieved by changing some parameters from the **CountVectorizer** function from **scikit-learn** library.
 
 ### Scenario 1 (unigrams)
 If we want to use unigrams, we don't have to tell it to the CountVectorizer because it analyzes unigrams by default. 
@@ -39,7 +39,7 @@ vectorizer = CountVectorizer(max_features=16165, min_df=5, max_df=0.7, stop_word
 
 ### Scenario 2 (bigrams)
 In this case, it is necessary to edit the parameter *ngram_range* and set it to **ngram_range=(2,2)**
-NOTE: we are using the top 16165 bigrams for the analysis as seen in the parameter *max_features* (this can be edited of course)
+NOTE: we are using the top 16165 bigrams for the analysis as seen in the parameter *max_features*
 ```
 vectorizer = CountVectorizer(max_features=16165, min_df=5, max_df=0.7, stop_words=stopwords.words('english'), ngram_range=(2,2))
 
