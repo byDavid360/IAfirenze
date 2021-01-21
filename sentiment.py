@@ -9,7 +9,7 @@ from sklearn.datasets import load_files
 from nltk.corpus import stopwords
 
 #we load the dataset in the variable "data"
-data = load_files(r"D:\Escritorio\ASIGNATURAS ERASMUS\IA\Proyecto\tokens")
+data = load_files(r"PATH_OF_THE_DATASET")
 
 """The variable X is an array that stores the pos and neg reviews while the variable y is an array that stores the values 0 or 1 if the current review is neg or pos"""
 X,y = data.data, data.target
